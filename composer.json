@@ -1,5 +1,5 @@
 {
-    "name": "jtgraham38/jgwordpressstyle",
+    "name": "jtgraham38/jgwordpressblockstyle",
     "description": "A set of utility functions for extracting style values from a block's attributes object.",
     "type": "library",
     "license": "GPLv3",
