@@ -5,7 +5,8 @@
     "license": "GPLv3",
     "autoload": {
         "psr-4": {
-            "jtgraham38\\jgwordpressstyle\\": "src/"
+            "jtgraham38\\jgwordpressstyle\\": "src/",
+            "jtgraham38\\jgwordpressstyle\\styles\\": "src/styles/"
         }
     },
     "authors": [
@@ -14,5 +15,7 @@
             "email": "jtgraham38@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    }
 }

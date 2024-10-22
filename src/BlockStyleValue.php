@@ -1,21 +1,17 @@
 <?php
-namespace jtgraham38\jgwordpressstyle\BlockStyleValue;
-
-if (!defined('ABSPATH')) {
-    exit;
-}
+namespace jtgraham38\jgwordpressstyle;
 
 /**
  * Represents a block style value.
  */
 class BlockStyleValue{
     //fields
-    public string $value = "";
+    public ?string $value = "";
     public bool $isPreset = false;
 
     //constructor
     function __construct($value, $isPreset){
-        $this->value = $value;
+        $this->value = $value ?? null;
         $this->isPreset = $isPreset;
     }
 }
