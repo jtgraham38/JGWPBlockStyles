@@ -5,7 +5,7 @@
     "license": "GPLv3",
     "autoload": {
         "psr-4": {
-            "Jtgraham38\\Jgwordpressstyle\\": "src/"
+            "jtgraham38\\jgwordpressstyle\\": "src/"
         }
     },
     "authors": [
