@@ -46,4 +46,24 @@ class BlockStyle{
         }
         return implode(" ", array_merge($classes, $additionalClasses));
     }
+
+
+
+    public function presetVarToClass(string $var, string $prefix="", string $suffix=""){
+        //check if the string matches this format: var:preset|<some string>|<var>
+        $matches = [];
+        preg_match('/^var:preset\|([a-zA-Z0-9_-]+)\|([a-zA-Z0-9_-]+)$/', $var, $matches);
+
+        //if there was a match for the last group, extract it
+        if(count($matches) > 2){
+            $preset = $matches[1];
+            $var = $matches[2];
+
+            //return the class name
+            return $prefix . $var . $suffix;
+        }
+
+        //if there was no match, return the original string
+        return null;
+    }
 }
