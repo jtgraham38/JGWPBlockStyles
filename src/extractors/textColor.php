@@ -5,6 +5,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+use jtgraham38\jgwordpressstyle\BlockStyleValue\BlockStyleValue;
+
 function block_textColor($attributes) {
     //flag to check if the color is a preset value
     $isPreset = false;
@@ -23,8 +25,5 @@ function block_textColor($attributes) {
     }
 
     //if neither of the above are available, return an empty string
-    return array(
-        'isPreset' => $isPreset,
-        'color' => $color
-    );
+    return new BlockStyleValue($color, $isPreset);
 }

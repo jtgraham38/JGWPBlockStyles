@@ -5,13 +5,16 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+use jtgraham38\jgwordpressstyle\BlockStyleValue\BlockStyleValue;
+
+
 /**
  * Extracts the button background color from the attributes array
  * 
  * @param array $attributes
  * @return array 'color' => string: the value of the color attribute, 'isPreset' => boolean: whether the color is a preset value
  */
-function block_btnBkgColor($attributes){
+function block_btnBgColor($attributes){
     //flag to check if the color is a preset value
     $isPreset = false;
     $color = null;
@@ -28,10 +31,7 @@ function block_btnBkgColor($attributes){
     }
 
     //if neither of the above are available, return an empty string
-    return array(
-        'isPreset' => $isPreset,
-        'color' => $color
-    );
+    return new BlockStyleValue($color, $isPreset);
 }
 
 /**
@@ -57,8 +57,5 @@ function block_btnTextColor($attributes){
     }
 
     //if neither of the above are available, return an empty string
-    return array(
-        'isPreset' => $isPreset,
-        'color' => $color
-    );
+    return new BlockStyleValue($color, $isPreset);
 }
