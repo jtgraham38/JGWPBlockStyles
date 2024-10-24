@@ -15,16 +15,16 @@ trait Color{
         $isPreset = false;
         $color = null;
     
-        //first, try to extract from the $this->attributes['textColor'] location
+        //first, try to extract from the $this->attributes['style']['color']['text'] location
+        //this is for custom values
+        if (!empty($this->attributes['style']['color']['text'])) {
+            $color = $this->attributes['style']['color']['text'];
+        }
+        //otherwise, try to extract from the $this->attributes['textColor'] location
         //this is for preset values
-        if (!empty($this->attributes['textColor'])) {
+        else if (!empty($this->attributes['textColor'])) {
             $isPreset = true;
             $color = $this->attributes['textColor'];
-        }
-        //otherwise, try to extract from the $this->attributes['style']['color']['text'] location
-        //this is for custom values
-        else if (!empty($this->attributes['style']['color']['text'])) {
-            $color = $this->attributes['style']['color']['text'];
         }
     
         //if neither of the above are available, return an empty string
