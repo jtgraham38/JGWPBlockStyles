@@ -30,4 +30,31 @@ trait Color{
         //if neither of the above are available, return an empty string
         return new BlockStyleValue($color, $isPreset);
     }
+
+    /**
+     * Extracts the background color from the attributes array
+     * 
+     * @param array $this->attributes
+     * @return array 'color' => string: the value of the color attribute, 'isPreset' => boolean: whether the color is a preset value
+     */
+    function bgColor(): BlockStyleValue {
+        //flag to check if the color is a preset value
+        $isPreset = false;
+        $color = null;
+    
+        //first, try to extract from the $this->attributes['style']['color']['background'] location
+        //this is for custom values
+        if (!empty($this->attributes['style']['color']['background'])) {
+            $color = $this->attributes['style']['color']['background'];
+        }
+        //otherwise, try to extract from the $this->attributes['backgroundColor'] location
+        //this is for preset values
+        else if (!empty($this->attributes['backgroundColor'])) {
+            $isPreset = true;
+            $color = $this->attributes['backgroundColor'];
+        }
+    
+        //if neither of the above are available, return an empty string
+        return new BlockStyleValue($color, $isPreset);
+    }
 }

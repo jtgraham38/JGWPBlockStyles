@@ -24,7 +24,6 @@ trait ButtonColor{
             if (strpos($color, 'var:') === 0) {
                 $isPreset = true;
             }
-    
         }
     
         //if neither of the above are available, return an empty string
