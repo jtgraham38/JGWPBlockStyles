@@ -6,6 +6,9 @@ use jtgraham38\jgwordpressstyle\BlockStyleValue;
 use jtgraham38\jgwordpressstyle\styles\Typography;
 use jtgraham38\jgwordpressstyle\styles\ButtonColor;
 use jtgraham38\jgwordpressstyle\styles\Color;
+use jtgraham38\jgwordpressstyle\styles\Spacing;
+use jtgraham38\jgwordpressstyle\styles\Border;
+use jtgraham38\jgwordpressstyle\styles\LinkColor;
 
 
 /**
@@ -20,6 +23,9 @@ class BlockStyle{
     use Typography;
     use Color;
     use ButtonColor;
+    use Spacing;
+    use Border;
+    use LinkColor;
 
     private $attributes;
 

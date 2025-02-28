@@ -57,4 +57,6 @@ trait Color{
         //if neither of the above are available, return an empty string
         return new BlockStyleValue($color, $isPreset);
     }
+
+    
 }
