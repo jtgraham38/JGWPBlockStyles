@@ -18,6 +18,12 @@ use jtgraham38\jgwordpressstyle\styles\LinkColor;
  * - buttonTextColor
  * - textColor
  * - fontSize
+ * - margin
+ * - padding
+ * - borderWidth
+ * - borderRadius
+ * - borderColor
+ * - linkColor
  */
 class BlockStyle{
     use Typography;

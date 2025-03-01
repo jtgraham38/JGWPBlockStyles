@@ -11,7 +11,7 @@ class BlockStyleValue{
 
     //constructor
     function __construct($value, $isPreset){
-        $this->value = $value ?? null;
+        $this->value = $value ?? "";    //empty string to ensure string compatibility
         $this->isPreset = $isPreset;
     }
 }
